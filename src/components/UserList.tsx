@@ -6,6 +6,7 @@ type UserListProps = {
   currentPage: number
   totalPages: number
   onPageChange: (page: number) => void
+  onSelectUser?: (user: User) => void
 }
 
 function UserList({
@@ -14,6 +15,7 @@ function UserList({
   currentPage,
   totalPages,
   onPageChange,
+  onSelectUser,
 }: UserListProps) {
   if (loading) {
     return (
@@ -76,7 +78,8 @@ function UserList({
           {users.map((user) => (
             <article
               key={user.id}
-              className="group rounded-2xl border border-slate-800 bg-slate-800/80 p-4 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-slate-800"
+              onClick={() => onSelectUser?.(user)}
+              className="group cursor-pointer rounded-2xl border border-slate-800 bg-slate-800/80 p-4 transition duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:border-cyan-400/40 hover:bg-slate-700/80"
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-violet-500 font-bold text-white">

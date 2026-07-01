@@ -8,6 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [currentPage, setCurrentPage] = useState(1)
   const [searchQuery, setSearchQuery] = useState("")
+  const [selectedUser, setSelectedUser] = useState<User | null>(null)
 
   const filteredUsers = users.filter((user) =>
     user.name.toLowerCase().includes(searchQuery.toLowerCase()),
@@ -70,6 +71,7 @@ function App() {
           currentPage={safeCurrentPage}
           totalPages={totalPages}
           onPageChange={(page) => setCurrentPage(Math.min(Math.max(page, 1), totalPages))}
+          onSelectUser={setSelectedUser}
         />
       </div>
     </div>
