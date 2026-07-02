@@ -1,6 +1,6 @@
 # 👥 Desafio Técnico - Painel de Usuários
 
-Este projeto é a resolução de um desafio técnico para a vaga de Desenvolvedor Front-End Júnior. Trata-se de uma aplicação em React que consome a API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/) para listar, filtrar e exibir detalhes de usuários em uma interface moderna e responsiva.
+Este projeto é a resolução de um desafio técnico. Trata-se de uma aplicação em React que consome a API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/) para listar, filtrar e exibir detalhes de usuários em uma interface moderna e responsiva.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -20,7 +20,7 @@ Este projeto é a resolução de um desafio técnico para a vaga de Desenvolvedo
 
 ## ⭐ Funcionalidades Bônus e Diferenciais de UI/UX
 
-Para ir além dos requisitos básicos e entregar uma experiência de uso superior, foram implementadas as seguintes funcionalidades exclusivas:
+Para ir além dos requisitos básicos, foram implementadas as seguintes funcionalidades exclusivas:
 
 ### 🌗 Suporte a Tema Claro/Escuro (Dark Mode)
 A aplicação possui suporte nativo à alternância de temas. 
@@ -40,7 +40,7 @@ Siga os passos abaixo para rodar a aplicação na sua máquina:
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/Fabiofiorentino/teste-react-junior-cdtsoftware
+   git clone https://github.com/Fabiofiorentino/teste-react-junior-cdtsoftware.git
     ```
 
 2. Navegue até o diretório do projeto:
