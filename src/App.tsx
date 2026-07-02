@@ -10,6 +10,15 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1)
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedUser, setSelectedUser] = useState<User | null>(null)
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window === "undefined") return true
+    return localStorage.getItem("theme") !== "light"
+  })
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode)
+    localStorage.setItem("theme", darkMode ? "dark" : "light")
+  }, [darkMode])
 
   const filteredUsers = users.filter((user) =>
     user.name.toLowerCase().includes(searchQuery.toLowerCase()),
@@ -40,13 +49,23 @@ function App() {
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.18),_transparent_35%),linear-gradient(135deg,_#020617_0%,_#111827_100%)] px-4 py-10 text-slate-100">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.4em] text-cyan-300">
-            Desafio Técnico CDT Software
-          </p>
-          <h1 className="mt-3 text-4xl font-bold sm:text-5xl">
-            Lista de usuários
-          </h1>
+        <div className="mb-8 flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.4em] text-cyan-300">
+              Desafio Técnico CDT Software
+            </p>
+            <h1 className="mt-3 text-4xl font-bold sm:text-5xl">
+              Lista de usuários
+            </h1>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setDarkMode((value) => !value)}
+            className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-100 shadow-lg shadow-slate-950/20 transition hover:bg-slate-800"
+          >
+            {darkMode ? "Modo claro" : "Modo escuro"}
+          </button>
         </div>
 
         <div className="mb-6">
