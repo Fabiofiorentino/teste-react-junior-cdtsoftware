@@ -1,4 +1,5 @@
 import type { User } from "../interfaces/User"
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
 
 type UserDetailsModalProps = {
   user: User | null
@@ -7,6 +8,10 @@ type UserDetailsModalProps = {
 
 function UserDetailsModal({ user, onClose }: UserDetailsModalProps) {
   if (!user) return null
+
+  const latitude = parseFloat(user.address.geo.lat)
+  const longitude = parseFloat(user.address.geo.lng)
+  const position: [number, number] = [latitude, longitude]
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm">
@@ -53,6 +58,25 @@ function UserDetailsModal({ user, onClose }: UserDetailsModalProps) {
             <p className="text-sm font-medium text-slate-500">Cidade</p>
             <p className="mt-1 text-base font-semibold text-slate-900">{user.address.city}</p>
           </div>
+        </div>
+
+        <div className="mt-6 rounded-3xl overflow-hidden border border-slate-200 bg-slate-100">
+          <MapContainer
+            center={position}
+            zoom={13}
+            scrollWheelZoom={false}
+            className="h-80 w-full"
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={position}>
+              <Popup>
+                {user.name} <br /> {user.address.city}
+              </Popup>
+            </Marker>
+          </MapContainer>
         </div>
 
         <div className="mt-6 flex justify-end">
