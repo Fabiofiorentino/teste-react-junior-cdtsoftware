@@ -11,12 +11,20 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedUser, setSelectedUser] = useState<User | null>(null)
   const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window === "undefined") return true
+    if (typeof window === "undefined") return false
     return localStorage.getItem("theme") !== "light"
   })
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode)
+    const root = document.documentElement
+    if (darkMode) {
+      root.classList.add("dark")
+      document.body.classList.add("dark")
+    } else {
+      root.classList.remove("dark")
+      document.body.classList.remove("dark")
+    }
+
     localStorage.setItem("theme", darkMode ? "dark" : "light")
   }, [darkMode])
 
