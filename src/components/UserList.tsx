@@ -19,7 +19,7 @@ function UserList({
 }: UserListProps) {
   if (loading) {
     return (
-      <section className="rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 shadow-2xl shadow-cyan-950/30 backdrop-blur-xl">
+      <section className="rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 shadow-2xl shadow-cyan-950/30 backdrop-blur-xl dark:border-slate-700 dark:bg-slate-950/80">
         <div className="mb-6 flex items-center justify-between">
           <div>
             <div className="h-3 w-24 animate-pulse rounded-full bg-slate-700" />
@@ -53,13 +53,13 @@ function UserList({
   }
 
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 shadow-2xl shadow-cyan-950/30 backdrop-blur-xl">
+    <section className="rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 shadow-2xl shadow-cyan-950/30 backdrop-blur-xl dark:border-slate-700 dark:bg-slate-950/80">
       <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
             Usuários
           </p>
-          <h2 className="mt-1 text-2xl font-semibold text-white">
+          <h2 className="mt-1 text-2xl font-semibold text-white dark:text-slate-100">
             Lista de contatos
           </h2>
         </div>
@@ -70,7 +70,7 @@ function UserList({
       </div>
 
       {users.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-slate-700 bg-slate-800/60 p-8 text-center text-slate-300">
+        <div className="rounded-2xl border border-dashed border-slate-700 bg-slate-800/60 p-8 text-center text-slate-300 dark:border-slate-600 dark:bg-slate-900/60 dark:text-slate-300">
           Nenhum usuário encontrado.
         </div>
       ) : (
@@ -79,7 +79,7 @@ function UserList({
             <article
               key={user.id}
               onClick={() => onSelectUser?.(user)}
-              className="group cursor-pointer rounded-2xl border border-slate-800 bg-slate-800/80 p-4 transition duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:border-cyan-400/40 hover:bg-slate-700/80"
+              className="group cursor-pointer rounded-2xl border border-slate-800 bg-slate-800/80 p-4 transition duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:border-cyan-400/40 hover:bg-slate-700/80 dark:border-slate-700 dark:bg-slate-950/70 dark:hover:bg-slate-900/80"
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-violet-500 font-bold text-white">

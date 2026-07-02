@@ -47,7 +47,7 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.18),_transparent_35%),linear-gradient(135deg,_#020617_0%,_#111827_100%)] px-4 py-10 text-slate-100">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.18),_transparent_35%),linear-gradient(135deg,_#020617_0%,_#111827_100%)] px-4 py-10 text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
           <div>
@@ -62,17 +62,17 @@ function App() {
           <button
             type="button"
             onClick={() => setDarkMode((value) => !value)}
-            className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-100 shadow-lg shadow-slate-950/20 transition hover:bg-slate-800"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-100 shadow-lg shadow-slate-950/20 transition hover:bg-slate-800 dark:border-slate-600 dark:bg-slate-800/80 dark:text-slate-100 dark:hover:bg-slate-700"
           >
             {darkMode ? "Modo claro" : "Modo escuro"}
           </button>
         </div>
 
         <div className="mb-6">
-          <label className="mb-2 block text-sm font-medium text-slate-300" htmlFor="search-users">
+          <label className="mb-2 block text-sm font-medium text-slate-300 dark:text-slate-300" htmlFor="search-users">
             Pesquisar usuário
           </label>
-          <div className="flex items-center rounded-2xl border border-slate-700 bg-slate-900/70 px-4 py-3 shadow-lg shadow-cyan-950/20 backdrop-blur">
+          <div className="flex items-center rounded-2xl border border-slate-700 bg-slate-900/70 px-4 py-3 shadow-lg shadow-cyan-950/20 backdrop-blur dark:border-slate-600 dark:bg-slate-900/80">
             <span className="mr-3 text-lg text-cyan-300">🔎</span>
             <input
               id="search-users"

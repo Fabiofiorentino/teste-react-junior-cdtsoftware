@@ -15,14 +15,14 @@ function UserDetailsModal({ user, onClose }: UserDetailsModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/60 px-4 py-6 backdrop-blur-sm">
-      <div className="w-full max-w-xl overflow-auto rounded-[1rem] border border-slate-200 bg-white shadow-2xl shadow-slate-950/20 max-h-[90vh]">
+      <div className="w-full max-w-xl overflow-auto rounded-[1rem] border border-slate-200 bg-white shadow-2xl shadow-slate-950/20 max-h-[90vh] dark:border-slate-700 dark:bg-slate-950">
         <div className="flex h-full flex-col">
-          <div className="flex items-start justify-between border-b border-slate-200 bg-white p-6">
+          <div className="flex items-start justify-between border-b border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-950">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">
                 Detalhes do usuário
               </p>
-              <h2 className="mt-2 text-2xl font-semibold text-slate-900">{user.name}</h2>
+              <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-slate-100">{user.name}</h2>
             </div>
 
             <button
@@ -36,33 +36,33 @@ function UserDetailsModal({ user, onClose }: UserDetailsModalProps) {
 
           <div className="flex-1 min-h-0 overflow-y-auto p-6 modal-scrollbar">
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl bg-slate-50 p-4">
-                <p className="text-sm font-medium text-slate-500">Nome completo</p>
-                <p className="mt-1 text-base font-semibold text-slate-900">{user.name}</p>
+              <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-900">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Nome completo</p>
+                <p className="mt-1 text-base font-semibold text-slate-900 dark:text-slate-100">{user.name}</p>
               </div>
 
-              <div className="rounded-2xl bg-slate-50 p-4">
-                <p className="text-sm font-medium text-slate-500">Email</p>
-                <p className="mt-1 break-all text-base font-semibold text-slate-900">{user.email}</p>
+              <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-900">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Email</p>
+                <p className="mt-1 break-all text-base font-semibold text-slate-900 dark:text-slate-100">{user.email}</p>
               </div>
 
-              <div className="rounded-2xl bg-slate-50 p-4">
-                <p className="text-sm font-medium text-slate-500">Telefone</p>
-                <p className="mt-1 text-base font-semibold text-slate-900">{user.phone}</p>
+              <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-900">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Telefone</p>
+                <p className="mt-1 text-base font-semibold text-slate-900 dark:text-slate-100">{user.phone}</p>
               </div>
 
-              <div className="rounded-2xl bg-slate-50 p-4">
-                <p className="text-sm font-medium text-slate-500">Empresa</p>
-                <p className="mt-1 text-base font-semibold text-slate-900">{user.company.name}</p>
+              <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-900">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Empresa</p>
+                <p className="mt-1 text-base font-semibold text-slate-900 dark:text-slate-100">{user.company.name}</p>
               </div>
 
-              <div className="rounded-2xl bg-slate-50 p-4 sm:col-span-2">
-                <p className="text-sm font-medium text-slate-500">Cidade</p>
-                <p className="mt-1 text-base font-semibold text-slate-900">{user.address.city}</p>
+              <div className="rounded-2xl bg-slate-50 p-4 sm:col-span-2 dark:bg-slate-900">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Cidade</p>
+                <p className="mt-1 text-base font-semibold text-slate-900 dark:text-slate-100">{user.address.city}</p>
               </div>
             </div>
 
-            <div className="mt-6 rounded-3xl overflow-hidden border border-slate-200 bg-slate-100">
+            <div className="mt-6 rounded-3xl overflow-hidden border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-900">
               <MapContainer
                 center={position}
                 zoom={8}
@@ -82,7 +82,7 @@ function UserDetailsModal({ user, onClose }: UserDetailsModalProps) {
             </div>
           </div>
 
-          <div className="border-t border-slate-200 bg-white p-6">
+          <div className="border-t border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-950">
             <div className="flex justify-end">
               <button
                 onClick={onClose}
