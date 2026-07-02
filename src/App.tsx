@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import UserDetailsModal from "./components/UserDetailsModal"
 import UserList from "./components/UserList"
 import type { User } from "./interfaces/User"
 import { getUsers } from "./services/api"
@@ -73,6 +74,8 @@ function App() {
           onPageChange={(page) => setCurrentPage(Math.min(Math.max(page, 1), totalPages))}
           onSelectUser={setSelectedUser}
         />
+
+        <UserDetailsModal user={selectedUser} onClose={() => setSelectedUser(null)} />
       </div>
     </div>
   )
